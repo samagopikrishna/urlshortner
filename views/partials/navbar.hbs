@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  {{!-- <a class="navbar-brand" href="/">HomePage</a> --}}
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item {{#if (ifEquality title "signUpPage")}}active{{/if}}">
+        <a class="nav-link" href="/signUp">SignUp</a>
+      </li>
+      <li class="nav-item  {{#if (ifEquality title "LoginPage")}}active{{/if}}">
+              <a class="nav-link" href="/">Login</a>
+      </li> 
+           <li class="nav-item  {{#if (ifEquality title "forgotPasswordPage")}}active{{/if}}">
+              <a class="nav-link" href="/forgotPassword">Forgot Password</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
