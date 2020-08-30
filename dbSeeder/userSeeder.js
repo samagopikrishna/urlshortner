@@ -1,9 +1,9 @@
 require("../dbConfig/config");
-const User = require("../models/user");
+const User = require("../models/user1");
 
 const saveUser = async () => {
   const newUser = new User({
-      email:"ranjith@gmail.com",
+      email:"ranjithr@gmail.com",
     first_name: "Ranjith",
     last_name: "Reddy",
     password:"test1",

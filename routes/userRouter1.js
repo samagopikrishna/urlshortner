@@ -1,11 +1,11 @@
 const express = require("express");
-require("../dbConfig/config");
+require("../dbConfig/config1");
 const {email_pass} = require("../configuration.js");
 const uuid = require("uuid");
 const buildUrl = require("build-url");
 
 var nodemailer = require('nodemailer');
-var User = require("../models/user.js");
+var User = require("../models/user1.js");
 const userRouter = express.Router();
 
 userRouter.post("/",(req,res)=>{
@@ -48,13 +48,7 @@ var url = buildUrl('http://localhost:8080/user', {
         from: 'shravankumar121999@gmail.com',
         to: email,
         subject: 'please click the below link to verify your mail',
-       html: `
-       <html>
-       <body>
-       <p id = "url">${url}</p>
-       </body>
-       </html>
-       `
+       text: 'Sending the mail using Node JS'
       };
       
       transporter.sendMail(mailOptions, function(error, info){
@@ -73,13 +67,6 @@ var url = buildUrl('http://localhost:8080/user', {
       };
       
       saveUser();
-
-
-
-
-    
-
-
 })
 
 
@@ -98,7 +85,7 @@ userRouter.get("/verify",async (req,res)=>{
 
       console.log(result);
       
-    res.status(200).send("you are successfully verified please login !!!");
+    res.status(200).send("Verified Successfully please login !");
 })
 
 
@@ -110,11 +97,9 @@ userRouter.get("/verifyLogin", (req,res)=>{
           email: email 
         });
         console.log(result);
-      };
-
-      
-
+      };    
 })
+
 module.exports = {
     userRouter
 }

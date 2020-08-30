@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const expressHbs = require("express-handlebars");
 const path = require("path");
-const {userRouter} = require("./routes/userRouter");
+const {userRouter} = require("./routes/userRouter1");
 const ifEquality = require("./views/helpers/ifEquality");
 const app = express();
 app.use(bodyParser.json());
@@ -18,8 +18,6 @@ const hbs = expressHbs.create({
   app.engine(".hbs", hbs.engine);
   app.set("view engine", ".hbs");
   app.set("views", path.join(__dirname, "./views"));
-
-
 
 app.get("/",(req,res)=>{
     try {
